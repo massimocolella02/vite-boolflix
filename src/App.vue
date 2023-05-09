@@ -24,9 +24,10 @@ export default {
       .then(axios.spread((res1, res2) =>{
         const films_found = res1.data.results;
         const tv_found = res2.data.results;
-        
+
         store.arrayFoundFilms = films_found;
         store.arrayFoundTv = tv_found;
+    
       }))
     }
   }
