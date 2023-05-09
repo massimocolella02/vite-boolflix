@@ -12,11 +12,8 @@ export default {
   },
   data() {
     return {
-      store      
+      store  
     }
-  },
-  created(){
-
   },
   methods: {
     SearchFilmApi(){
@@ -27,16 +24,12 @@ export default {
       .then(axios.spread((res1, res2) =>{
         const films_found = res1.data.results;
         const tv_found = res2.data.results;
-
-        const merged = [...tv_found, ...films_found];
-
-        store.arrayFoundAll = merged
-
-        console.log(store.arrayFoundAll)
-
+        
+        store.arrayFoundFilms = films_found;
+        store.arrayFoundTv = tv_found;
       }))
     }
-  },
+  }
 }
 </script>
 
