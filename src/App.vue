@@ -23,8 +23,8 @@ export default {
   methods: {
     SearchFilmApi(){
       axios.all([
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ab42a7864ebdef8b4e338a6d3256ad1d&language=it_IT&query=${store.inputValue}`),
-        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=ab42a7864ebdef8b4e338a6d3256ad1d&language=it_IT&query=${store.inputValue}`)
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=ab42a7864ebdef8b4e338a6d3256ad1d&language=it-IT&query=${store.inputValue}`),
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=ab42a7864ebdef8b4e338a6d3256ad1d&language=it-IT&query=${store.inputValue}`)
       ])
       .then(axios.spread((res1, res2) =>{
         store.arrayUserFilms = res1.data.results;
