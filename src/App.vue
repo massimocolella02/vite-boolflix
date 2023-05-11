@@ -17,6 +17,9 @@ export default {
       store  
     }
   },
+  created() {
+    this.objectHero()
+  },
   methods: {
     SearchFilmApi(){
       axios.all([
@@ -27,9 +30,30 @@ export default {
         store.arrayUserFilms = res1.data.results;
         store.arrayUserTv = res2.data.results;
 
-        console.log(store.arrayUserTv)
        }))
-     }
+     },
+
+    objectHero(){
+      const options = {
+          method: 'GET',
+          url: 'https://api.themoviedb.org/3/movie/popular',
+          params: {language: 'it-IT', page: '1'},
+          headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYjQyYTc4NjRlYmRlZjhiNGUzMzhhNmQzMjU2YWQxZCIsInN1YiI6IjY0NWEwZDQ3NzdkMjNiMDEzNjVlMGIwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mYd5rop0tYeLWKBkDdnvoCxcISNFbGKjoDKSAFj_Q8E'
+          }
+        };
+
+        axios
+          .request(options)
+          .then(function (response) {
+            store.objectHero = response.data.results[0];
+            console.log(response.data.results[0])
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+    } 
   }
 }
 </script>

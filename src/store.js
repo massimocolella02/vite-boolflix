@@ -7,5 +7,7 @@ export const store = reactive({
     
     arrayTopRatedFilm: [],
     arrayTopRatedSeries: [],
+
+    objectHero: [],
     
 })
