@@ -1,7 +1,5 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1- Creare Layout statico
+2- fare chiamata api per le varie section (trending, popular ecc)
+3- creare off-canvas e inserire un input dentro, al click cercherà i film e serie tv contenenti il nome scritto
+4- prendere il primo oggetto nell'array most popular e metterlo nell'hero
+5- al click su una card, scriversi i dati di provenienza e inserirli nell'hero
